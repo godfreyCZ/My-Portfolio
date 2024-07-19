@@ -61,8 +61,8 @@ img {
 strong{ font-weight: var(--fw-bold);}
 
 :focus{
-  outline: 3px solid var(--clr-accent);
-  outline-offset: 3px;
+  outline: 4px solid var(--clr-accent);
+  outline-offset: 3cap;
 }
 
 /*Button*/
@@ -224,6 +224,54 @@ nav{
 
   .service + .service{
     margin-left: 2em;
+  }
+
+}
+
+
+/* About Section*/
+
+.about-me{
+  max-width: 1000px;
+  margin: 0 auto;
+
+}
+
+@media (min-width: 600px) {
+
+  .about-me { 
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas:
+        "title img"
+        "subtitle img"
+        "text img";
+    grid-column-gap: 2em;
+
+
+
+  }
+
+  .section__title--about{
+    grid-area: title;
+
+  }
+
+  .section__subtitle--about{
+    grid-column: 1 /-1;
+    grid-row: 2;
+    position: relative;
+    left: -1em;
+    width: calc(100% + 2em);
+    padding-left: 1em;
+    padding-right: calc(200px + 4em);
+
+  }
+
+  .about-me__img{
+    grid-area: img;
+    position: relative;
+    z-index: 2;
   }
 
 }
